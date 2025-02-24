@@ -9,4 +9,11 @@ else
     warning("Expected speech model under %s.\nNo Speech model is available for benchmarking. Please see the README on download instructions.",fullfile(pwd,"asr-wav2vec2-librispeech"))
 end
 
+% Add folder containing benchmarking functions
 addpath("benchmark\");
+% Add folder containing the original audio files (to be downloaded by user)
+addpath("OriginalAudioDatabase")
+
+if ~isfolder("TemporaryResults")
+    mkdir("TemporaryResults");
+end
