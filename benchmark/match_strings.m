@@ -9,10 +9,8 @@ if iscell(truth_text)
     for idx = 1:length(truth_text)
         truth_vector = horztcat(tmp,strsplit(string(truth_text{idx}),' '));
     end
-elseif ischar(truth_text) || (isstring(truth_text) && ~isvector(truth_text))
+elseif ischar(truth_text) || isstring(truth_text)
     truth_vector = strsplit(string(truth_text),' ');
-else
-    truth_vector = truth_text;
 end
 truth_vector = lower(truth_vector);
 
